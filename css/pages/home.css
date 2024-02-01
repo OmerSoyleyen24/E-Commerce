@@ -22,3 +22,16 @@
 }
 
 /*! categories end */
+
+/*! products start*/
+#products {
+    margin: 40px 0;
+}
+
+#products .product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+}
+
+/*! products end */
