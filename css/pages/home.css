@@ -55,7 +55,7 @@
 /*! blogs end */
 
 /*! brands start */
-.brands {
+#brands {
     margin: 40px 0;
 }
 
@@ -67,7 +67,6 @@
     border: 1px solid #dee0ea;
     padding: 30px 10px;
 }
-
 
 .brand-list .brand-list-item {
     opacity: .4;
