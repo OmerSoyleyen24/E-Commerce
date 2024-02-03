@@ -77,6 +77,12 @@ button {
     border-color: black;
 }
 
+.btn-danger {
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
 .btn-primary:hover {
     background-color: #fff;
     color: #1367ef;
