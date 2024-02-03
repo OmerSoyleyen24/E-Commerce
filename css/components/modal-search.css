@@ -10,6 +10,9 @@
     align-items: center;
     position: fixed;
     visibility: hidden;
+    z-index: 999;
+    opacity: 0;
+    transition: .3s ease all;
 }
 
 #modal-search::after {
