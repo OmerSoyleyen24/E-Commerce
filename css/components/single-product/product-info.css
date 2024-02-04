@@ -67,6 +67,7 @@
     padding: 2px;
     cursor: pointer;
     transition: .2s ease border-color;
+    margin-left: -1px;
 }
 
 .site-main .colors .color-wrapper.active {
