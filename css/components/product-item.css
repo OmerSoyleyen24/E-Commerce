@@ -1,4 +1,4 @@
-#products .product-list-item {
+.products .product-list-item {
     position: relative;
     text-align: center;
     background-color: #efefef;
@@ -16,11 +16,11 @@
     opacity: 0;
 }
 
-#products .product-list-item .product-image img {
+.products .product-list-item .product-image img {
     transition: .3s ease-in-out all;
 }
 
-#products .product-list-item .product-image:hover .img2 {
+.products .product-list-item .product-image:hover .img2 {
     visibility: visible;
     opacity: 1;
 }
@@ -71,7 +71,7 @@
     text-decoration: line-through;
 }
 
-#products .product-discount {
+.products .product-discount {
     width: 40px;
     height: 40px;
     border-radius: 40px;
