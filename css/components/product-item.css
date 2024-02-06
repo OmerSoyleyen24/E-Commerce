@@ -123,6 +123,7 @@
     color: #fff;
     font-size: 12px;
     display: flex;
+    pointer-events: none;
 }
 
 .product-wrapper {

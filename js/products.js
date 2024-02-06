@@ -1,12 +1,26 @@
 import { product1, product2 } from "./glide.js";
 
-let products = []
+let products = [];
+let card = [];
+
+function addToCard() {
+    const buttons = [...document.getElementsByClassName("add-to-card")];
+    buttons.forEach((button) => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = e.target.dataset.id;
+            console.log(id)
+            const findProduct = products.find(product => product.id === Number(id))
+            card.push({ ...findProduct, quantity: 1 });
+            localStorage.setItem("card", JSON.stringify(card));
+        })
+    })
+}
 
 function productsFunc() {
     const products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
     const productsContainer = document.getElementsByClassName("product-list");
 
-    console.log(productsContainer)
     let results = ``;
 
     products.forEach((item) => {
@@ -43,7 +57,7 @@ function productsFunc() {
             </div>
             <span class="product-discount">-${item.discount}%</span>
             <div class="product-links">
-                <button>
+                <button class="add-to-card" data-id=${item.id}>
                     <i class="bi bi-basket-fill"></i>
                 </button>
                 <button>
@@ -58,11 +72,10 @@ function productsFunc() {
             </div>
         </div>
         </li>`
+        productsContainer[0].innerHTML = results;
+        productsContainer[1].innerHTML = results;
+        addToCard();
     });
-
-    productsContainer[0].innerHTML += results;
-    productsContainer[1].innerHTML += results;
-
     product1();
     product2();
 }
