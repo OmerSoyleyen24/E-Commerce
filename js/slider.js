@@ -39,4 +39,4 @@ function sliderFunc() {
     }
 }
 
-export default sliderFunc();
+sliderFunc();

@@ -1,3 +1,5 @@
+const productsContainer = document.getElementsByClassName("product-list");
+
 export function product1() {
     const config = {
         type: "carousel",
@@ -16,7 +18,7 @@ export function product1() {
         }
     }
 
-    new Glide(".glide", config).mount();
+    productsContainer[0] && new Glide(".glide", config).mount();
 }
 
 export function product2() {
@@ -37,5 +39,5 @@ export function product2() {
         }
     }
 
-    new Glide(".glide2", config2).mount();
+    productsContainer[1] && new Glide(".glide2", config2).mount();
 }

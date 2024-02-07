@@ -1,16 +1,21 @@
 import headerFunc from "./header.js"
-import sliderFunc from "./slider.js"
 import productsFunc from "./products.js"
 
 //! add product to localStorage
-async function getData() {
+(async function () {
     const photos = await fetch("../js/data.json");
     const data = await photos.json();
 
-    data ? localStorage.setItem("products", JSON.stringify(data)) : []
-}
+    data ? localStorage.setItem("products", JSON.stringify(data)) : [];
+    productsFunc();
+})()
 
-getData();
+
+const products = localStorage.getItem("products");
+
+const cardItems = document.querySelector(".header-card-count")
+
+cardItems.innerHTML = localStorage.getItem("card") ? JSON.parse(localStorage.getItem("card")).length : "0";
 
 //! modal dialog start
 const modalDialogDOM = document.querySelector("#modal-dialog")

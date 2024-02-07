@@ -1,24 +1,29 @@
 import { product1, product2 } from "./glide.js";
 
-let products = [];
-let card = [];
-
+let products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
+let card = localStorage.getItem("card") ? JSON.parse(localStorage.getItem("card")) : [];
 function addToCard() {
+    const cardItems = document.querySelector(".header-card-count")
     const buttons = [...document.getElementsByClassName("add-to-card")];
     buttons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-            e.preventDefault();
-            const id = e.target.dataset.id;
-            console.log(id)
-            const findProduct = products.find(product => product.id === Number(id))
-            card.push({ ...findProduct, quantity: 1 });
-            localStorage.setItem("card", JSON.stringify(card));
-        })
+        const inCard = card.find((item) => item.id === Number(button.dataset.id))
+        if (inCard) {
+            button.setAttribute("disabled", "disabled")
+        }
+        else {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                const id = e.target.dataset.id;
+                const findProduct = products.find(product => product.id === Number(id))
+                card.push({ ...findProduct, quantity: 1 });
+                localStorage.setItem("card", JSON.stringify(card));
+                button.setAttribute("disabled", "disabled")
+            })
+        }
     })
 }
 
 function productsFunc() {
-    const products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
     const productsContainer = document.getElementsByClassName("product-list");
 
     let results = ``;
@@ -72,12 +77,12 @@ function productsFunc() {
             </div>
         </div>
         </li>`
-        productsContainer[0].innerHTML = results;
-        productsContainer[1].innerHTML = results;
+        productsContainer[0] ? productsContainer[0].innerHTML = results : "";
+        productsContainer[1] ? productsContainer[1].innerHTML = results : "";
         addToCard();
     });
     product1();
     product2();
 }
 
-export default productsFunc()
+export default productsFunc;

@@ -114,6 +114,11 @@
     transition: all ease .3s;
 }
 
+.product-list-item .product-links button:disabled {
+    opacity: .4 !important;
+    cursor: no-drop;
+}
+
 .product-list-item .product-links button:hover,
 .product-list-item .product-links a:hover {
     opacity: .7;
