@@ -1,4 +1,5 @@
 const productsContainer = document.getElementsByClassName("product-list");
+const productThumb = document.getElementsByClassName(".product-thumb");
 
 export function product1() {
     const config = {
@@ -43,16 +44,15 @@ export function product2() {
 }
 
 
-const config3 = {
-    perView: 5,
-    bound: true,
-    breakpoints: {
-        992: {
-            perView: 3,
+(async function singleThumbs() {
+    const config3 = {
+        perView: 5,
+        bound: true,
+        breakpoints: {
+            992: {
+                perView: 3,
+            }
         }
     }
-}
-const productThumb = document.querySelector(".product-thumb");
-
-productThumb && new Glide(".product-thumb", config3).mount();
-
+    productThumb && new Glide(".product-thumb", config3).mount()
+})()
