@@ -3,7 +3,7 @@ import { product1, product2 } from "./glide.js";
 let products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
 let card = localStorage.getItem("card") ? JSON.parse(localStorage.getItem("card")) : [];
 
-function addToCard() {
+function addToCard(products) {
     const cardItems = document.querySelector(".header-card-count")
     const buttons = [...document.getElementsByClassName("add-to-card")];
     buttons.forEach((button) => {
@@ -36,7 +36,7 @@ function productRoute() {
     })
 }
 
-function productsFunc() {
+function productsFunc(products) {
     const productsContainer = document.getElementsByClassName("product-list");
 
     let results = ``;
@@ -92,11 +92,11 @@ function productsFunc() {
         </li>`
         productsContainer[0] ? productsContainer[0].innerHTML = results : "";
         productsContainer[1] ? productsContainer[1].innerHTML = results : "";
-        addToCard();
-        productRoute();
+        addToCard(products);
     });
     product1();
     product2();
+    productRoute();
 }
 
 export default productsFunc;

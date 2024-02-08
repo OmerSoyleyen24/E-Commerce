@@ -42,6 +42,7 @@ export function product2() {
     productsContainer[1] && new Glide(".glide2", config2).mount();
 }
 
+
 const config3 = {
     perView: 5,
     bound: true,
@@ -51,5 +52,7 @@ const config3 = {
         }
     }
 }
+const productThumb = document.querySelector(".product-thumb");
 
-new Glide(".product-thumb", config3).mount();
+productThumb && new Glide(".product-thumb", config3).mount();
+

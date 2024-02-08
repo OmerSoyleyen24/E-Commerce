@@ -1,3 +1,16 @@
+function productThumb() {
+    const config3 = {
+        perView: 5,
+        bound: true,
+        breakpoints: {
+            992: {
+                perView: 3,
+            }
+        }
+    }
+    new Glide(".product-thumb", config3).mount();
+}()
+
 const productId = localStorage.getItem("productId")
     ? JSON.parse(localStorage.getItem("productId"))
     : localStorage.setItem("productId", JSON.stringify(1));
