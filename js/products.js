@@ -2,6 +2,7 @@ import { product1, product2 } from "./glide.js";
 
 let products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
 let card = localStorage.getItem("card") ? JSON.parse(localStorage.getItem("card")) : [];
+
 function addToCard() {
     const cardItems = document.querySelector(".header-card-count")
     const buttons = [...document.getElementsByClassName("add-to-card")];
@@ -20,6 +21,18 @@ function addToCard() {
                 button.setAttribute("disabled", "disabled")
             })
         }
+    })
+}
+
+function productRoute() {
+    const productLink = document.getElementsByClassName("product-link")
+    Array.from(productLink).forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = e.target.dataset.id
+            localStorage.setItem("productId", JSON.stringify(id));
+            window.location.href = "product-details.html";
+        })
     })
 }
 
@@ -68,7 +81,7 @@ function productsFunc() {
                 <button>
                     <i class="bi bi-heart-fill"></i>
                 </button>
-                <a href="product-details.html">
+                <a href="#" class="product-link" data-id=${item.id}>
                     <i class="bi bi-eye-fill"></i>
                 </a>
                 <button>
@@ -80,6 +93,7 @@ function productsFunc() {
         productsContainer[0] ? productsContainer[0].innerHTML = results : "";
         productsContainer[1] ? productsContainer[1].innerHTML = results : "";
         addToCard();
+        productRoute();
     });
     product1();
     product2();

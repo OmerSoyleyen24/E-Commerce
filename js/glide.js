@@ -41,3 +41,15 @@ export function product2() {
 
     productsContainer[1] && new Glide(".glide2", config2).mount();
 }
+
+const config3 = {
+    perView: 5,
+    bound: true,
+    breakpoints: {
+        992: {
+            perView: 3,
+        }
+    }
+}
+
+new Glide(".product-thumb", config3).mount();
