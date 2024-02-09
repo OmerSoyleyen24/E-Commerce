@@ -6,7 +6,7 @@ export function thumbsActiveFunc() {
     thumbs.forEach((item) => {
         item.addEventListener("click", () => {
             thumbs.forEach((item) => {
-                item.classList = "img-fluid"
+                item.classList.remove("active");
             })
             singleImage.src = item.src;
             item.classList = "img-fluid active"

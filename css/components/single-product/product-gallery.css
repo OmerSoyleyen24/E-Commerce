@@ -3,6 +3,16 @@
     padding-right: 15px;
 }
 
+#single-product .single-image-wrapper {
+    overflow: hidden;
+}
+
+#single-product .single-image-wrapper img {
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center;
+}
+
 #single-product .single-image-wrapper img:hover {
     cursor: zoom-in;
 }
@@ -22,6 +32,7 @@
 
 #single-product .product-thumb {
     position: relative;
+    margin-top: 11px;
 }
 
 #single-product .glide__arrow {

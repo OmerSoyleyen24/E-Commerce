@@ -1,4 +1,8 @@
-import { thumbsActiveFunc } from './single-product/thumbsActive.js';
+import { thumbsActiveFunc } from './product-details/thumbsActive.js';
+import zoomFunc from './product-details/zoom.js';
+import colorsFunc from './product-details/colors.js';
+import valuesFunc from './product-details/values.js';
+
 const productId = localStorage.getItem("productId")
     ? JSON.parse(localStorage.getItem("productId"))
     : localStorage.setItem("productId", JSON.stringify(1));
@@ -34,3 +38,7 @@ findProduct.img.thumbs.forEach((item) => {
 });
 galleryThumbs.innerHTML = result;
 thumbsActiveFunc();
+
+const productThumbs = document.querySelectorAll(".product-thumb .glide__slide");
+
+productThumbs[0].classList.add("active")
