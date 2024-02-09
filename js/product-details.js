@@ -1,4 +1,5 @@
 import { thumbsActiveFunc } from './product-details/thumbsActive.js';
+import { singleThumbs } from './glide.js';
 import zoomFunc from './product-details/zoom.js';
 import colorsFunc from './product-details/colors.js';
 import valuesFunc from './product-details/values.js';
@@ -37,6 +38,7 @@ findProduct.img.thumbs.forEach((item) => {
     `
 });
 galleryThumbs.innerHTML = result;
+singleThumbs();
 thumbsActiveFunc();
 
 const productThumbs = document.querySelectorAll(".product-thumb .glide__slide");

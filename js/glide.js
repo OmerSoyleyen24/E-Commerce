@@ -44,7 +44,7 @@ export function product2() {
 }
 
 
-(async function singleThumbs() {
+export function singleThumbs() {
     const config3 = {
         perView: 5,
         bound: true,
@@ -54,5 +54,5 @@ export function product2() {
             }
         }
     }
-    productThumb && new Glide(".product-thumb", config3).mount()
-})()
+    new Glide(".product-thumb", config3).mount()
+}

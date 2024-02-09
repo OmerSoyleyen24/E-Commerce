@@ -1,4 +1,6 @@
 function sliderFunc() {
+    const sliderButtonLeft = document.getElementById("slider-button-left");
+    const sliderButtonRight = document.getElementById("slider-button-right");
     let slideIndex = 1;
     showSlides(slideIndex);
 
@@ -6,9 +8,13 @@ function sliderFunc() {
         showSlides(slideIndex += 1)
     }, 4000)
 
-    function plusSlide(n) {
-        showSlides((slideIndex += n));
-    }
+    sliderButtonLeft.addEventListener("click", () => {
+        showSlides((slideIndex -= 1));
+    })
+
+    sliderButtonRight.addEventListener("click", () => {
+        showSlides((slideIndex += 1));
+    })
 
     function currentSlide(n) {
         showSlides(slideIndex = n);

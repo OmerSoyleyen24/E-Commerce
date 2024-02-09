@@ -1,6 +1,5 @@
 import { product1, product2 } from "./glide.js";
 
-let products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
 let card = localStorage.getItem("card") ? JSON.parse(localStorage.getItem("card")) : [];
 
 function addToCard(products) {
