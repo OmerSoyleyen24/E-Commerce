@@ -8,14 +8,14 @@ function displayCardProduct() {
         <tr class="card-item">
             <td>
                 <div class="card-image">
-                    <img src=${item.img.singleImage} alt="product1">
+                    <img src=${item.img.singleImage}>
                     <i class="bi bi-x delete-card" data-id=${item.id}></i>
                 </div>
             </td>
             <td>${item.name}</td>
             <td>$${item.price.newPrice}</td>
             <td class="product-quantity">${item.quantity}</td>
-            <td class="product-subtotal">${(item.price.newPrice * item.quantity).toFixed(2)}</td>
+            <td class="product-subtotal">$${(item.price.newPrice * item.quantity).toFixed(2)}</td>
          </tr>
         `
     });
@@ -26,8 +26,9 @@ function displayCardProduct() {
 displayCardProduct();
 
 function removeCardItem() {
-    let cardItems = document.querySelector(".header-card-count");
     const btnDeleteCard = document.querySelectorAll(".delete-card");
+    let cardItems = document.querySelector(".header-card-count");
+
     btnDeleteCard.forEach((button) => {
         button.addEventListener("click", (e) => {
             const id = e.target.dataset.id;

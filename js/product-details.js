@@ -44,3 +44,25 @@ thumbsActiveFunc();
 const productThumbs = document.querySelectorAll(".product-thumb .glide__slide");
 
 productThumbs[0].classList.add("active")
+
+//! add to card
+let card = localStorage.getItem("card")
+    ? JSON.parse(localStorage.getItem("card"))
+    : [];
+
+const findCard = card.find((item) => item.id === findProduct.id);
+const btnAddToCard = document.getElementById("add-to-card");
+const quantityDOM = document.getElementById("quantity");
+let cardItems = document.querySelector(".header-card-count");
+
+if (findCard) {
+    btnAddToCard.setAttribute("disabled", "disabled");
+}
+else {
+    btnAddToCard.addEventListener("click", () => {
+        card.push({ ...findCard, quantity: Number(quantityDOM.value) });
+        btnAddToCard.setAttribute("disabled", "disabled");
+        localStorage.setItem("card", JSON.stringify(card));
+        cardItems.innerHTML = card.length;
+    })
+}

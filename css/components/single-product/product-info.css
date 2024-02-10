@@ -154,6 +154,10 @@
     width: 80%;
 }
 
+.site-main .card-button button:disabled {
+    background-color: #1367ef;
+}
+
 .site-main .product-extra-buttons {
     display: flex;
     align-items: center;
