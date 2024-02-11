@@ -1,5 +1,6 @@
-import headerFunc from "./header.js"
-import productsFunc from "./products.js"
+import headerFunc from "./header.js";
+import productsFunc from "./products.js";
+import searchFunc from "./search.js";
 
 //! add product to localStorage
 (async function () {
@@ -8,6 +9,7 @@ import productsFunc from "./products.js"
 
     data ? localStorage.setItem("products", JSON.stringify(data)) : [];
     productsFunc(data);
+    searchFunc(data);
 })()
 
 
