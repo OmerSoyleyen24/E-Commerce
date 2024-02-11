@@ -3,6 +3,7 @@ import { singleThumbs } from './glide.js';
 import zoomFunc from './product-details/zoom.js';
 import colorsFunc from './product-details/colors.js';
 import valuesFunc from './product-details/values.js';
+import tabsFunc from './product-details/tabs.js'
 
 const productId = localStorage.getItem("productId")
     ? JSON.parse(localStorage.getItem("productId"))
