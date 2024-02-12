@@ -489,80 +489,7 @@
                             <h3>2 reviews for Basic Colored Sweatpants With Elastic Hems
                             </h3>
                             <div class="comments">
-                                <ol class="comment-list">
-                                    <li class="comment-list-item">
-                                        <div class="comment-avatar">
-                                            <img src="img/avatars/avatar2.jpg" alt="">
-                                        </div>
-                                        <div class="comment-text">
-                                            <ul class="comment-star">
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-half"></i>
-                                                </li>
-                                            </ul>
-                                            <div class="comment-meta">
-                                                <strong>admin</strong>
-                                                -
-                                                <time>April 23,2023</time>
-                                            </div>
-                                            <div class="comment-desc">
-                                                <p>
-                                                    Sed perspiciatis unde omnis iste natus error sit voluptatem
-                                                    accusantium
-                                                    doloremque laudantium.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="comment-list-item">
-                                        <div class="comment-avatar">
-                                            <img src="img/avatars/avatar2.jpg" alt="">
-                                        </div>
-                                        <div class="comment-text">
-                                            <ul class="comment-star">
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="bi bi-star-half"></i>
-                                                </li>
-                                            </ul>
-                                            <div class="comment-meta">
-                                                <strong>admin</strong>
-                                                -
-                                                <time>April 23,2023</time>
-                                            </div>
-                                            <div class="comment-desc">
-                                                <p>
-                                                    Sed perspiciatis unde omnis iste natus error sit voluptatem
-                                                    accusantium
-                                                    doloremque laudantium.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
+                                <ol class="comment-list"></ol>
                             </div>
                             <div class="review-form-wrapper">
                                 <h2>Add a review</h2>
@@ -608,14 +535,14 @@
                                             Your Review
                                             <span style="color: red;">*</span>
                                         </label>
-                                        <textarea id="comment" rows="10" cols="50"></textarea>
+                                        <textarea id="comment-text" rows="10" cols="50" required></textarea>
                                     </div>
                                     <div class="form-comment comment-form-author">
-                                        <label for="author">
+                                        <label for="name">
                                             Name
                                             <span style="color: red;">*</span>
                                         </label>
-                                        <input id="author" type="text">
+                                        <input id="comment-name" type="text" required>
                                     </div>
                                     <div class="form-comment comment-form-email">
                                         <label for="email">
@@ -625,8 +552,8 @@
                                         <input id="email" type="email">
                                     </div>
                                     <div class="form-comment comment-form-cookies">
-                                        <input id="checkbox" type="checkbox">
-                                        <label for="checkbox">
+                                        <input id="cookies" name="cookies" type="checkbox">
+                                        <label for="cookies">
                                             Save my name,email and website in this browser for the next time my comment.
                                         </label>
                                     </div>

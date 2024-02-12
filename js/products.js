@@ -24,7 +24,7 @@ function addToCard(products) {
 }
 
 function productRoute() {
-    const productLink = document.getElementsByClassName("product-link")
+    const productLink = document.getElementsByClassName("product-link");
     Array.from(productLink).forEach((button) => {
         button.addEventListener("click", (e) => {
             e.preventDefault();

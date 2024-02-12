@@ -4,6 +4,7 @@ import zoomFunc from './product-details/zoom.js';
 import colorsFunc from './product-details/colors.js';
 import valuesFunc from './product-details/values.js';
 import tabsFunc from './product-details/tabs.js'
+import commentFunc from './product-details/comments.js';
 
 const productId = localStorage.getItem("productId")
     ? JSON.parse(localStorage.getItem("productId"))
@@ -42,7 +43,7 @@ galleryThumbs.innerHTML = result;
 singleThumbs();
 thumbsActiveFunc();
 
-const productThumbs = document.querySelectorAll(".product-thumb .glide__slide");
+const productThumbs = document.querySelectorAll(".product-thumb .glide__slide img");
 
 productThumbs[0].classList.add("active")
 
@@ -61,7 +62,7 @@ if (findCard) {
 }
 else {
     btnAddToCard.addEventListener("click", () => {
-        card.push({ ...findCard, quantity: Number(quantityDOM.value) });
+        card.push({ ...findProduct, quantity: Number(quantityDOM.value) });
         btnAddToCard.setAttribute("disabled", "disabled");
         localStorage.setItem("card", JSON.stringify(card));
         cardItems.innerHTML = card.length;
